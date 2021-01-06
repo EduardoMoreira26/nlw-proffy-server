@@ -5,23 +5,9 @@ const app = express();
 
 app.use(express.json());
 
-app.post('/users', (request, response) => {
+app.get('/', (request, response) => {
 
-  console.log(request.body)
-
-  const users = [
-    {
-      "name": "diego",
-      "Age": 25
-    },
-    {
-      "name": "Eduardo",
-      "Age": 25
-    }
-  ]
-
-  return response.json(users);
-
+  return response.json({ message: 'Hello World' });
 });
 
 app.listen(3333);
